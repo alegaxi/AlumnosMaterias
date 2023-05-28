@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AlumnosMaterias.Menu"
+             Title="Menu">
+    <ScrollView BackgroundColor="Lavender">
+        <StackLayout>
+            <Label Text="Bienvenido al Menu!!" VerticalOptions="Center" HorizontalOptions="Center" FontSize="20" CharacterSpacing="2" Margin="0,10,0,0"/>
+            <Label Text=""/>
+            <Button x:Name="btnMateria" 
+                    Text="Materias" 
+                    BackgroundColor="Pink"
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="White"
+                    CornerRadius="30"
+                    WidthRequest="180"
+                    HeightRequest="60"
+                    Clicked="btnMateria_Clicked"/>
+            <Label Text=""/>
+            <Button x:Name="btnAlumnos" 
+                    Text="Alumnos" 
+                    BackgroundColor="HotPink"
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="White"
+                    CornerRadius="30"
+                    WidthRequest="180"
+                    HeightRequest="60"
+                    Clicked="btnAlumnos_Clicked"/>
+            <Label Text=""/>
+            <Button x:Name="btnGrupos" 
+                    Text="Grupos" 
+                    BackgroundColor="Pink"
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="White"
+                    CornerRadius="30"
+                    WidthRequest="180"
+                    HeightRequest="60"
+                    Clicked="btnGrupos_Clicked"/>
+            <Label Text=""/>
+            <Button x:Name="btnLista" 
+                    Text="Tomar Lista" 
+                    BackgroundColor="HotPink"
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="White"
+                    CornerRadius="30"
+                    WidthRequest="180"
+                    HeightRequest="60"
+                    Clicked="btnLista_Clicked"/>
+            <Label Text=""/>
+            <Button x:Name="btnRegresar" 
+                    Text="Regresar" 
+                    BackgroundColor="ForestGreen"
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="White"
+                    CornerRadius="30"
+                    WidthRequest="180"
+                    HeightRequest="60"
+                    Clicked="btnRegresar_Clicked"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

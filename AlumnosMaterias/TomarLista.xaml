@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:editors="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
+             x:Class="AlumnosMaterias.TomarLista"
+             xmlns:local="clr-namespace:AlumnosMaterias"
+             Title="TomarLista"
+             Appearing="ContentPage_Appearing">
+    <ContentPage.BindingContext>
+        <local:ComboGrupo/>
+    </ContentPage.BindingContext>
+    <ScrollView>
+        <StackLayout BackgroundColor="Lavender">
+            
+            <Label Text="Tomar lista" VerticalOptions="Center" HorizontalOptions="Center" FontSize="20" CharacterSpacing="2" Margin="0,10,0,0"/>
+            
+            <Label Text=""/>
+            
+            <Grid>
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="10*"/>
+                </Grid.RowDefinitions>
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="35*"/>
+                    <ColumnDefinition Width="65*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Label Text="FECHA" HorizontalOptions="Center" Grid.Column="0" Grid.Row="0"/>
+                
+                <DatePicker x:Name="dtFecha" TextColor="Black" Format="dd/MM/yyyy" HorizontalOptions="CenterAndExpand" Margin="10,5,5,0" Grid.Row="1" Grid.Column="0"/>
+                
+                <Label Text="MATERIA" HorizontalOptions="Center" Grid.Column="1" Grid.Row="0"/>
+                
+                <editors:SfComboBox x:Name="comboBoxMateria"
+                                WidthRequest="250"
+                                MaxDropDownHeight="250"
+                                TextMemberPath="Name"
+                                DisplayMemberPath="Name"
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                SelectionChanged="comboBoxMateria_SelectionChanged"
+                                >
+                    <editors:SfComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <Label Text="{Binding}" TextColor="Black" />
+                        </DataTemplate>
+                    </editors:SfComboBox.ItemTemplate>
+                </editors:SfComboBox>
+                
+            </Grid>
+            
+            <Label Text=""/>
+            
+            <Label Text="GRUPO" HorizontalOptions="Center"/>
+            
+            <editors:SfComboBox x:Name="comboBoxGrupo"
+                                WidthRequest="250"
+                                MaxDropDownHeight="250"
+                                ItemsSource="{Binding DatosGrupo}"
+                                TextMemberPath="Name"
+                                DisplayMemberPath="Name"
+                                SelectionChanged="comboBoxGrupo_SelectionChanged">
+                <editors:SfComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding}" TextColor="Black" />
+                    </DataTemplate>
+                </editors:SfComboBox.ItemTemplate>
+            </editors:SfComboBox>
+            
+            <Grid>
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Button x:Name="btnConsultar" Text="Consultar" BackgroundColor="Red"
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="White"
+                    CornerRadius="30"
+                    WidthRequest="130"
+                    HeightRequest="60"
+                    Margin="10,5,5,0"
+                    Grid.Row="0" Grid.Column="0"
+                    Clicked="btnConsultar_Clicked"/>
+                
+                <Button x:Name="btnConsultarFecha" Text="Consultar Fecha" BackgroundColor="Red"
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="White"
+                    CornerRadius="30"
+                    WidthRequest="210"
+                    HeightRequest="60"
+                    Margin="10,5,5,0"
+                    Grid.Row="0" Grid.Column="1"
+                    Clicked="btnConsultarFecha_Clicked"/>
+            </Grid>
+            
+            <syncfusion:SfDataGrid x:Name="dataGrid2" IsVisible="true" ColumnWidthMode="Fill" CellValueChanged="dataGrid2_CellValueChanged">
+                <syncfusion:SfDataGrid.Columns>
+                    <syncfusion:DataGridCheckBoxColumn x:Name="checkAsistencia"
+                                                       HeaderText="Asistencia"
+                                                       MappingName="Assistencia">
+                    </syncfusion:DataGridCheckBoxColumn>
+                </syncfusion:SfDataGrid.Columns>
+                <syncfusion:SfDataGrid.DefaultStyle>
+                    <syncfusion:DataGridStyle HeaderRowBackground="Yellow" HeaderRowTextColor="Black" RowBackground="#AFD5FB" RowTextColor="#212121">
+                    </syncfusion:DataGridStyle>
+                </syncfusion:SfDataGrid.DefaultStyle>
+            </syncfusion:SfDataGrid>
+            
+            <syncfusion:SfDataGrid x:Name="dataGrid3" IsVisible="true" ColumnWidthMode="Fill" >
+                <syncfusion:SfDataGrid.Columns>
+                </syncfusion:SfDataGrid.Columns>
+                <syncfusion:SfDataGrid.DefaultStyle>
+                    <syncfusion:DataGridStyle HeaderRowBackground="Yellow" HeaderRowTextColor="Black" RowBackground="#AFD5FB" RowTextColor="#212121">
+                    </syncfusion:DataGridStyle>
+                </syncfusion:SfDataGrid.DefaultStyle>
+            </syncfusion:SfDataGrid>
+            <Button x:Name="btnRegresar" Text="Regresar" BackgroundColor="Red"
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="White"
+                    CornerRadius="30"
+                    WidthRequest="180"
+                    HeightRequest="60"
+                    Margin="10,5,5,0"
+                    Grid.Row="0" Grid.Column="1"
+                    Clicked="btnRegresar_Clicked"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

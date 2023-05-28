@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AlumnosMaterias.MainPage">
+
+    <Grid BackgroundColor="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+        </Grid.RowDefinitions>
+        <Image Source="loginicono.png" Grid.Column="0" Grid.Row="0"/>
+        <VerticalStackLayout Grid.Column="0" Grid.Row="1" HorizontalOptions="Center">
+            <Entry x:Name="tbUser"  Placeholder="User" PlaceholderColor="Black" TextColor="Black"/>
+            <Entry x:Name="tbPass" Placeholder="Password" PlaceholderColor="Black" IsPassword="True" Keyboard="Numeric" TextColor="Black"/>
+        </VerticalStackLayout>
+        <HorizontalStackLayout Grid.Column="0" Grid.Row="2" HorizontalOptions="CenterAndExpand">
+            <Button x:Name="btnAcept" 
+                    Text="Ingresar" 
+                    BackgroundColor="ForestGreen"
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="White"
+                    CornerRadius="30"
+                    WidthRequest="130"
+                    HeightRequest="60"
+                    Clicked="btnAcept_Clicked"/>
+            <Button x:Name="btnCancel" 
+                    Text="Cancelar" 
+                    BackgroundColor="Red"
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="White"
+                    CornerRadius="30"
+                    WidthRequest="130"
+                    HeightRequest="60"
+                    Clicked="btnCancel_Clicked"/>
+        </HorizontalStackLayout>
+    </Grid>
+
+</ContentPage>

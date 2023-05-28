@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1050372692200",
+    "project_id": "alumnosmaterias-f46b4",
+    "storage_bucket": "alumnosmaterias-f46b4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1050372692200:android:638f03f44ad2219379115d",
+        "android_client_info": {
+          "package_name": "com.companyname.alumnosmaterias"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1050372692200-223acbsgoi2gsieub9ntfkfdlfhjs8in.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBc7Rl5Cc2YaEcjq606bYtgcEvB47jZDyw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1050372692200-223acbsgoi2gsieub9ntfkfdlfhjs8in.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
